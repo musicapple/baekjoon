@@ -9,29 +9,26 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         // 배열 크기 입력
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+        int x =0;
+        int y =0;
 
         // 2차원 배열 선언 및 초기화
-        int[][] num = new int[n][m];
-        int[] row = new int[n];
-        int[] col = new int[m];
+        int[][] A = new int[9][9];
+        A[0][0] = sc.nextInt();
+        int max = A[0][0];
 
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < 9; i++) {
 
-            for(int j=0; j<m; j++){
-                num[i][j] = sc.nextInt();
-                row[i] += num[i][j];
-                col[j] += num[i][j];
+            for (int j =(i==0)?1:0; j < 9; j++) {
+                A[i][j] = sc.nextInt();
+                if(max < A[i][j]){
+                    max = A[i][j];
+                    x=i;
+                    y=j;
+                }
             }
         }
-        System.out.print("행의 합: ");
-        for(int i=0; i<n; i++){
-            System.out.println(row[i]);
-        }
-        System.out.print("열의 합: ");
-        for(int i=0; i<n;i++){
-            System.out.println(col[i]);
-        }
+        System.out.println(max);
+        System.out.print((x+1)+" "+(y+1));
     }
 }
