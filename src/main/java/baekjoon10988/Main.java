@@ -15,7 +15,7 @@ public class Main {
                 break;
             } else flag = true;
 
-            
+
         }
         if (flag) {
             System.out.println("1");
