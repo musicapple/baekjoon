@@ -18,7 +18,7 @@ public class Main {
             for(int j=0; j<str.length(); j++){  // 단어의 길이만큼 순회
                 if(flag[c[j] - 'a'] == false){  // 단어의 각 알파벳이 중복/미중복인지 확인
                     flag[c[j]-'a'] = true;
-                }else if(j>0 && (flag[j]!=flag[j-1])){
+                }else if(j>0 && c[j]!=c[j-1]){
                         group--;
                         break;
                     // 그룹단어임 종료. 다음 단어 그룹 단어 체크
