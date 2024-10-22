@@ -15,6 +15,7 @@ public class Main {
             String str = sc.next();
             char[] c = str.toCharArray();
 
+            
             for(int j=0; j<str.length(); j++){
                 if(flag[c[j]-'a'] == false){
 
