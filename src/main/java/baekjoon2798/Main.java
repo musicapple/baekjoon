@@ -17,11 +17,14 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        int result = result(arr,n,m);
+        int result = search(arr,n,m);
+        System.out.println(result);
     }
 
-    static int result(int arr[], int n, int m){
+    static int search(int[] arr, int n, int m){
+        int result = 0;
         int sum = 0;
+
         for(int i = 0; i<n-2; i++) {    // i는 0번째 자리부터 n-2번째 자리까지 순회
 
             for(int j = i+1; j<n-1; j++) {  //  j는 i+1자리부터 n-1번째 자리까지 순회
@@ -32,8 +35,14 @@ public class Main {
                     if(sum == m){
                         return sum;
                     }
+                    if(sum < m){  // 현재합이 m보다 작은 경우
+                        if(result < sum) {  // 이전의 합이 현재합보다 작은 경우에만 코드 실행
+                            result = sum;
+                        }
+                    }
                 }
             }
         }
+        return result;
     }
 }
