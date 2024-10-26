@@ -12,7 +12,6 @@ public class Main {
         int m = sc.nextInt();
 
         int[] arr = new int[n]; // 각 카드에 써져있는 숫자
-
         for(int i=0; i<n; i++){
             arr[i] = sc.nextInt();
         }
